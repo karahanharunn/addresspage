@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+.modal-content {
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.btn-close {
+    border: 1px solid lightgray;
+    border-radius: 100%;
+    padding: 8px;
+}
+

@@ -1,0 +1,172 @@
+.title {
+    font-size: 36px;
+    line-height: 48px;
+    font-family: "Lato";
+}
+
+.main {
+    background: #F9F9F9;
+    padding: 48px;
+}
+
+.createContact {
+    border: 2px solid #8087ED;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.createContact:hover {
+    background-color: #8087ED;
+}
+
+.createContact:hover .btnText {
+    color: white !important;
+}
+
+.btnText {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* Purple/Purple 400 */
+
+    color: #8087ED;
+}
+
+.subTitle {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #9EA0B7;
+}
+
+.input {
+    position: relative;
+    height: 40px;
+}
+
+.inputItem:focus {
+    border: 1px solid #8087ED;
+}
+
+.inputItem {
+    border: 1px solid #E2E2E2;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: transparent;
+    padding-left: 30px;
+    font-family: 'Lato', sans-serif;
+    outline: none;
+    height: 100%;
+}
+
+.inputItem::placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Purple / Purple 50 */
+
+    color: #9EA0B7;
+}
+
+.iconText {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    gap: 8px;
+    color: #8087ED;
+    cursor: pointer;
+}
+
+.table {
+    background: #FFFFFF;
+    /* Blue / Blue 50 */
+
+    border: 1px solid #E0E3FF;
+    border-radius: 24px;
+    padding: 32px;
+}
+
+.image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin: 4px;
+}
+
+.tableText {
+    font-style: normal;
+    font-weight: 400;
+    color: #3F4271;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.tableAddress {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #797B9C;
+}
+
+.address {
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+
+    text-transform: uppercase;
+
+    color: rgba(63, 66, 113, 0.5);
+}
+
+.tableTitle {
+    font-size: 16px;
+    line-height: 24px;
+    border-bottom: 0 !important;
+    color: #3F4271;
+}
+
+.tableRow:hover {
+    background-color: #FCFCFC;
+}
+
+.send {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+    text-align: right;
+    color: #8087ED;
+}
+
+.hoveredBlock {
+    visibility: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tableRow:hover .hoveredBlock {
+    visibility: visible;
+}
+
+.button {
+    width: 100%;
+    background-color: #8087ED;
+}
+
+.button:hover {
+    background-color: #8087ED;
+}
