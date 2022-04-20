@@ -15,6 +15,7 @@ import FormControl from "react-bootstrap/FormControl";
 import "./app.css";
 import ChevronLeft from "./icons/ChevronLeft";
 import ChevronRight from "./icons/ChevronRight";
+import Dots from "./icons/Dots";
 function App() {
   const [Text, setText] = useState("");
   const [CreateAccountVisible, setCreateAccountVisible] = useState(false);
@@ -124,7 +125,12 @@ function App() {
         </div>
       </MyVerticallyCenteredModal>
       <div style={{ height: "100vh" }} className="d-flex">
-        <div style={{ width: 337, background: "yellow" }}>left menü</div>
+        <div
+          className={styles.leftMenu}
+          style={{ width: 337, background: "yellow" }}
+        >
+          left menü
+        </div>
         <div className={styles.main + " w-100"}>
           <div className="d-flex justify-content-between">
             <div>
@@ -214,7 +220,9 @@ function App() {
                           </div>
                         </td>
                         <td className={styles.tableAddress}>
-                          <div className={styles.hoveredBlock + " pt-2"}>
+                          <div
+                            className={styles.hoveredBlock + " pt-2 col-sm-0"}
+                          >
                             <span
                               onClick={() => {
                                 setSelectedId(data.id);
@@ -242,6 +250,24 @@ function App() {
                             >
                               <SvgDelete />
                             </IconComponent>
+                          </div>
+                          <div className="d-flex gap-4">
+                            <div
+                              style={{
+                                height: 28,
+                                width: 120,
+                                textAlign: "center",
+                              }}
+                              onClick={() => setCreateAccountVisible(true)}
+                              className={styles.createContact}
+                            >
+                              <button className={styles.btnText + " btn p-0"}>
+                                Send
+                              </button>
+                            </div>
+                            <div className={styles.tableIcon}>
+                              <Dots />
+                            </div>
                           </div>
                         </td>
                       </tr>

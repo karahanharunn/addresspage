@@ -12,7 +12,11 @@
 .createContact {
     border: 2px solid #8087ED;
     box-sizing: border-box;
+    padding: 0 !important;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .createContact:hover {
@@ -201,4 +205,13 @@
 
 .button:hover {
     background-color: #8087ED;
+}
+
+@media only screen and (max-width: 992px) {
+    .leftMenu {
+        display: none
+    }
+    .hoveredBlock {
+      display: none;
+    }
 }
