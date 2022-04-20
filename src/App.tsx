@@ -186,10 +186,13 @@ function App() {
             <table className={"table"}>
               <thead>
                 <tr>
-                  <th className={styles.tableTitle + " w-25"}>Name</th>
-                  <th className={styles.tableTitle + " w-75"}>
+                  <th scope="col" className={styles.tableTitle + " col-3"}>
+                    Name
+                  </th>
+                  <th className={styles.tableTitle + " col-1"}>
                     Wallet address
                   </th>
+                  <th className={styles.tableTitle + " col-1"}></th>
                 </tr>
               </thead>
               <tbody style={{ borderTop: 0 }}>
@@ -206,7 +209,7 @@ function App() {
                           />
                           <span className={styles.tableText}> {data.name}</span>
                         </td>
-                        <td>
+                        <td className={styles.address}>
                           <div className="pt-2 d-flex align-items-center">
                             <span className={styles.tableAddress}>
                               0xB3a0aE8E5cce5cfE09f7d15E5F4C54Cd9B17Ec5a
@@ -214,9 +217,11 @@ function App() {
                             <IconComponent>
                               <SvgEdit />
                             </IconComponent>
-                            <IconComponent>
-                              <SvgShare />
-                            </IconComponent>
+                            <div className={styles.share}>
+                              <IconComponent>
+                                <SvgShare />
+                              </IconComponent>
+                            </div>
                           </div>
                         </td>
                         <td className={styles.tableAddress}>
@@ -253,15 +258,12 @@ function App() {
                           </div>
                           <div className="d-flex gap-4">
                             <div
-                              style={{
-                                height: 28,
-                                width: 120,
-                                textAlign: "center",
-                              }}
                               onClick={() => setCreateAccountVisible(true)}
                               className={styles.createContact}
                             >
-                              <button className={styles.btnText + " btn p-0"}>
+                              <button
+                                className={styles.btnText + " btn px-4 py-0"}
+                              >
                                 Send
                               </button>
                             </div>
@@ -303,7 +305,7 @@ function App() {
 export default App;
 function IconComponent({ children, ...rest }: any) {
   return (
-    <span style={{ paddingLeft: 12 }} {...rest} role="button">
+    <span className={styles.icon} {...rest} role="button">
       {children}
     </span>
   );
