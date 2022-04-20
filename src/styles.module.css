@@ -162,12 +162,36 @@
     visibility: visible;
 }
 
+.tableFooter {
+    border-top: 0 !important;
+
+}
+
+.footerText {
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #797B9C;
+}
+
 .noFound {
-   text-align: center;
-   width: 200%;
-   margin-top: 48px;
-   margin-bottom: 48px;
-   color: #9EA0B7;
+    text-align: center;
+    width: 200%;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    color: #9EA0B7;
+}
+
+.tableIcon {
+    width: 32px;
+    height: 32px;
+    background: rgba(178, 183, 255, 0.2);
+    opacity: 0.5;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button {

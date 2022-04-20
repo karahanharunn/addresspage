@@ -13,6 +13,8 @@ import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import "./app.css";
+import ChevronLeft from "./icons/ChevronLeft";
+import ChevronRight from "./icons/ChevronRight";
 function App() {
   const [Text, setText] = useState("");
   const [CreateAccountVisible, setCreateAccountVisible] = useState(false);
@@ -248,6 +250,22 @@ function App() {
                 {data.filter((data) => data.name.includes(Text)).length ==
                   0 && <div className={styles.noFound}>No results found</div>}
               </tbody>
+              <tfoot className={styles.tableFooter}>
+                <td style={{ textAlign: "end" }} colSpan={12}>
+                  <span
+                    style={{ justifyContent: "flex-end" }}
+                    className="d-flex gap-2"
+                  >
+                    <div className={styles.tableIcon}>
+                      <ChevronLeft color="white" />
+                    </div>
+                    <span className={styles.footerText}>1-4 of 4</span>
+                    <div className={styles.tableIcon}>
+                      <ChevronRight />
+                    </div>
+                  </span>
+                </td>
+              </tfoot>
             </table>
           </div>
         </div>
