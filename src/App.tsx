@@ -178,10 +178,8 @@ function App() {
             <table className={"table"}>
               <thead>
                 <tr>
-                  <th className={styles.tableTitle} scope="col">
-                    Name
-                  </th>
-                  <th className={styles.tableTitle} scope="col-9">
+                  <th className={styles.tableTitle + " w-25"}>Name</th>
+                  <th className={styles.tableTitle + " w-75"}>
                     Wallet address
                   </th>
                 </tr>
@@ -247,6 +245,8 @@ function App() {
                       </tr>
                     );
                   })}
+                {data.filter((data) => data.name.includes(Text)).length ==
+                  0 && <div className={styles.noFound}>No results found</div>}
               </tbody>
             </table>
           </div>

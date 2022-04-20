@@ -162,6 +162,14 @@
     visibility: visible;
 }
 
+.noFound {
+   text-align: center;
+   width: 200%;
+   margin-top: 48px;
+   margin-bottom: 48px;
+   color: #9EA0B7;
+}
+
 .button {
     width: 100%;
     background-color: #8087ED;
