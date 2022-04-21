@@ -25,6 +25,12 @@ function App() {
   const [DeleteAccountVisible, setDeleteAccountVisible] = useState(false);
   const [SendCryptoVisible, setSendCryptoVisible] = useState(false);
   const [SelectedId, setSelectedId] = useState<any>(null);
+  const [Item, setItem] = useState({
+    x: 0,
+    y: 0,
+  });
+  console.log(Item.x);
+  console.log(Item.y);
   return (
     <div className="App">
       <MyVerticallyCenteredModal
@@ -273,22 +279,35 @@ function App() {
                                 Send
                               </button>
                             </div>
-
-                            <Menu
-                              menuButton={
-                                <div className={styles.tableIcon}>
-                                  <Dots />
-                                </div>
-                              }
+                            <div
+                              onClick={(e) => {
+                                setItem({ x: e.clientX, y: e.clientY });
+                              }}
                             >
-                              <MenuItem>
-                                <SvgCopy /> Edit
-                              </MenuItem>
-                              <MenuItem>??</MenuItem>
-                              <MenuItem>
-                                <SvgDelete /> Delete
-                              </MenuItem>
-                            </Menu>
+                              <Menu
+                                menuStyle={{
+                                  position: "fixed",
+                                  transform: `translate(${Item.x - 50}px, ${
+                                    Item.y + 75
+                                  }px)`,
+                                }}
+                                menuButton={
+                                  <div className={styles.tableIcon}>
+                                    <Dots />
+                                  </div>
+                                }
+                              >
+                                <MenuItem onClick={() => console.log("edit")}>
+                                  <SvgCopy /> Edit
+                                </MenuItem>
+                                <MenuItem onClick={() => console.log("??")}>
+                                  ??
+                                </MenuItem>
+                                <MenuItem onClick={() => console.log("delete")}>
+                                  <SvgDelete /> Delete
+                                </MenuItem>
+                              </Menu>
+                            </div>
                           </div>
                         </td>
                       </tr>
