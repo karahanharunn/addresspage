@@ -106,21 +106,32 @@
     padding: 32px;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .image {
     width: 40px;
     height: 40px;
     border-radius: 100%;
     margin: 4px;
 }
+
 .icon {
     padding-left: 12px;
 }
+
 .tableText {
     font-style: normal;
     font-weight: 400;
     color: #3F4271;
     font-size: 16px;
     line-height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .tableAddress {
@@ -215,6 +226,10 @@
     background-color: #8087ED;
 }
 
+.mobileHoveredBlock {
+    visibility: hidden;
+}
+
 @media only screen and (max-width: 992px) {
     .leftMenu {
         display: none
@@ -226,6 +241,16 @@
 
     .tableAddress {
         max-width: 70%;
+    }
+
+    .mobileHoveredBlock {
+        visibility: visible;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .tableAddress {
+        width: 200px;
     }
 }
 
@@ -241,6 +266,40 @@
 
     .tableAddress {
         width: 150px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .tableAddress {
+        width: 30px !important;
+    }
+
+    .tableText {
+        width: 20px;
+    }
+
+    .tableHead {
+        background-color: #E0E3FF;
+        width: 100%;
+    }
+
+    .tableTitle {
+        font-size: 10px !important;
+    }
+
+    .header {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: initial;
+        gap: 16px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .subTitle {
+        font-size: 16px;
     }
 }
 
@@ -261,17 +320,25 @@
     .tableAddress {
         width: 100px;
     }
+
     .share {
         display: none !important;
     }
+
     .icon {
         padding-left: 4px;
     }
+
     .btnText {
         padding-left: 8px !important;
         padding-right: 8px !important;
     }
+
     .table {
         padding: 16px;
+    }
+
+    .main {
+        padding: 20px;
     }
 }

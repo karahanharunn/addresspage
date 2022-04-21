@@ -132,7 +132,7 @@ function App() {
           left menü
         </div>
         <div className={styles.main + " w-100"}>
-          <div className="d-flex justify-content-between">
+          <div className={styles.header}>
             <div>
               <div className={styles.title}>Address Book</div>
               <div className={styles.subTitle}>
@@ -171,7 +171,7 @@ function App() {
                 className={styles.inputItem}
               />
             </div>
-            <div style={{ gap: 28 }} className="d-flex align-items-center">
+            <div style={{ gap: 28 }} className={styles.export + " d-flex align-items-center"}>
               <div className={styles.iconText}>
                 <SvgExport style={{ transform: "scale(0.8)" }} />
                 Export
@@ -184,15 +184,15 @@ function App() {
           </div>
           <div className={styles.table}>
             <table className={"table"}>
-              <thead>
+              <thead className={styles.tableHead}>
                 <tr>
                   <th scope="col" className={styles.tableTitle + " col-3"}>
                     Name
                   </th>
-                  <th className={styles.tableTitle + " col-1"}>
+                  <th className={styles.tableTitle + " col-6"}>
                     Wallet address
                   </th>
-                  <th className={styles.tableTitle + " col-1"}></th>
+                  <th className="col-1"></th>
                 </tr>
               </thead>
               <tbody style={{ borderTop: 0 }}>
@@ -256,7 +256,7 @@ function App() {
                               <SvgDelete />
                             </IconComponent>
                           </div>
-                          <div className="d-flex gap-4">
+                          <div className={styles.mobileHoveredBlock + " d-flex gap-4"}>
                             <div
                               onClick={() => setCreateAccountVisible(true)}
                               className={styles.createContact}
