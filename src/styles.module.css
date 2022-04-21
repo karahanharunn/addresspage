@@ -65,6 +65,7 @@
     border: 1px solid #E2E2E2;
     box-sizing: border-box;
     border-radius: 8px;
+    width: 100%;
     background-color: transparent;
     padding-left: 30px;
     font-family: 'Lato', sans-serif;
@@ -142,7 +143,16 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    max-width: 100%
+    max-width: 100%;
+}
+
+.mobileTableHeader {
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    padding: 12px;
+    background: rgba(178, 183, 255, 0.2);
+    align-items: center;
 }
 
 .address {
@@ -228,6 +238,16 @@
 
 .mobileHoveredBlock {
     visibility: hidden;
+    display: none;
+}
+
+.export {
+    display: flex;
+    align-items: center;
+}
+
+.export>*+* {
+    margin-left: 1.8rem;
 }
 
 @media only screen and (max-width: 992px) {
@@ -245,6 +265,15 @@
 
     .mobileHoveredBlock {
         visibility: visible;
+        display: flex;
+    }
+
+    .mobileHoveredBlock>*+* {
+        margin-left: 6px;
+    }
+    .tableRow td {
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
 
@@ -269,29 +298,47 @@
     }
 }
 
+@media only screen and (max-width: 380px) {
+    .table {
+        padding: 0 !important;
+    }
+}
+
 @media only screen and (max-width: 480px) {
     .tableAddress {
         width: 30px !important;
     }
 
     .tableText {
-        width: 20px;
+        width: 10px;
     }
 
-    .tableHead {
-        background-color: #E0E3FF;
+    .input {
         width: 100%;
     }
 
-    .tableTitle {
-        font-size: 10px !important;
+    .mobileTableHeader {
+        visibility: visible;
+        border-top-right-radius: 24px;
+        border-top-left-radius: 24px;
+    }
+
+    .table {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    .tableHead {
+        display: none !important;
     }
 
     .header {
         flex-direction: column;
         justify-content: flex-start;
         align-items: initial;
-        gap: 16px;
+        display: grid;
+        grid-gap: 1rem;
+        /* Safari 10-11 */
     }
 
     .title {
@@ -300,6 +347,10 @@
 
     .subTitle {
         font-size: 16px;
+    }
+
+    .export {
+        display: none;
     }
 }
 

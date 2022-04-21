@@ -15,6 +15,8 @@ import FormControl from "react-bootstrap/FormControl";
 import "./app.css";
 import ChevronLeft from "./icons/ChevronLeft";
 import ChevronRight from "./icons/ChevronRight";
+import { Menu, MenuItem, MenuButton, SubMenu } from "@szhsin/react-menu";
+import "@szhsin/react-menu/dist/core.css";
 import Dots from "./icons/Dots";
 function App() {
   const [Text, setText] = useState("");
@@ -151,7 +153,7 @@ function App() {
             </div>
           </div>
           <div
-            style={{ marginTop: 48, height: 40, marginBottom: 24 }}
+            style={{ marginTop: 40, height: 40, marginBottom: 24 }}
             className={" w-100 d-flex justify-content-between"}
           >
             <div className={styles.input}>
@@ -171,7 +173,7 @@ function App() {
                 className={styles.inputItem}
               />
             </div>
-            <div style={{ gap: 28 }} className={styles.export + " d-flex align-items-center"}>
+            <div className={styles.export}>
               <div className={styles.iconText}>
                 <SvgExport style={{ transform: "scale(0.8)" }} />
                 Export
@@ -182,6 +184,10 @@ function App() {
               </div>
             </div>
           </div>
+          <div className={styles.mobileTableHeader}>
+            <div className={styles.tableTitle + " col-6"}>Name</div>
+            <div className={styles.tableTitle + " col-6"}>Wallet address</div>
+          </div>
           <div className={styles.table}>
             <table className={"table"}>
               <thead className={styles.tableHead}>
@@ -189,10 +195,10 @@ function App() {
                   <th scope="col" className={styles.tableTitle + " col-3"}>
                     Name
                   </th>
-                  <th className={styles.tableTitle + " col-6"}>
+                  <th scope="col-6" className={styles.tableTitle + " col-6"}>
                     Wallet address
                   </th>
-                  <th className="col-1"></th>
+                  <th scope="col-3" className="col-3"></th>
                 </tr>
               </thead>
               <tbody style={{ borderTop: 0 }}>
@@ -256,7 +262,7 @@ function App() {
                               <SvgDelete />
                             </IconComponent>
                           </div>
-                          <div className={styles.mobileHoveredBlock + " d-flex gap-4"}>
+                          <div className={styles.mobileHoveredBlock}>
                             <div
                               onClick={() => setCreateAccountVisible(true)}
                               className={styles.createContact}
@@ -267,9 +273,22 @@ function App() {
                                 Send
                               </button>
                             </div>
-                            <div className={styles.tableIcon}>
-                              <Dots />
-                            </div>
+
+                            <Menu
+                              menuButton={
+                                <div className={styles.tableIcon}>
+                                  <Dots />
+                                </div>
+                              }
+                            >
+                              <MenuItem>
+                                <SvgCopy /> Edit
+                              </MenuItem>
+                              <MenuItem>??</MenuItem>
+                              <MenuItem>
+                                <SvgDelete /> Delete
+                              </MenuItem>
+                            </Menu>
                           </div>
                         </td>
                       </tr>
